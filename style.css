@@ -4,8 +4,9 @@
     --text-color: #FFFFFF;
     --accent-color: #F59E0B; /* Amber */
     --card-background: #1E1E1E;
-    --secondary-text: #A0A0A0;
+    --secondary-text: #B0B0B0; /* Slightly lighter for better contrast */
     --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 /* --- General Setup --- */
@@ -19,26 +20,27 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7; /* Increased for readability */
 }
 
 .container {
-    max-width: 800px;
+    max-width: 880px; /* Increased width */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 50px 20px; /* Adjusted padding */
 }
 
 h1, h2, h3 {
     color: var(--text-color);
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 h2 {
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 10px;
-    margin-bottom: 25px;
-    margin-top: 40px;
-    font-size: 1.8rem;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-size: 2rem;
 }
 
 p {
@@ -49,72 +51,91 @@ p {
 a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
 /* --- Header --- */
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 4.5rem; /* Increased font size */
     margin-bottom: 5px;
+    font-weight: 900;
+    letter-spacing: -2px; /* A pro touch for large headings */
 }
 
 header .tagline {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--secondary-text);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .social-links a {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 15px;
     color: var(--secondary-text);
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .social-links a:hover {
     color: var(--accent-color);
+    transform: translateY(-3px);
 }
 
 /* --- Skills --- */
-.skills-list {
+.skills-grid {
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
 }
 
-.skills-list li {
+.skills-grid li {
     background-color: var(--card-background);
     border: 1px solid var(--border-color);
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+.skills-grid li:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+
+.skills-grid i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    width: 20px; /* Ensures consistent alignment */
+    text-align: center;
 }
 
 /* --- Cards (for Projects & Courses) --- */
 .card {
     background-color: var(--card-background);
     border-left: 4px solid var(--accent-color);
-    padding: 25px;
+    padding: 30px;
     border-radius: 8px;
-    margin-bottom: 25px;
-    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
      background-color: #2a2a2a;
+     transform: translateY(-5px);
+     box-shadow: 0 8px 25px var(--shadow-color);
 }
 
 .card h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
 }
 .card h3 a {
@@ -124,10 +145,10 @@ header .tagline {
     color: var(--accent-color);
 }
 
-
 .card h4 {
     color: var(--text-color);
     font-size: 1rem;
+    font-weight: 700;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -145,36 +166,51 @@ header .tagline {
     font-style: italic;
     color: var(--accent-color);
     font-size: 0.9rem;
+    margin-top: 15px;
 }
 
 
 /* --- Footer --- */
 footer {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
     border-top: 1px solid var(--border-color);
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 footer .email-link {
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     display: inline-block;
     margin-top: 10px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+footer .email-link:hover {
+    border-color: var(--accent-color);
+    background-color: var(--card-background);
 }
 
 footer .copyright {
-    margin-top: 20px;
-    font-size: 0.8rem;
+    margin-top: 30px;
+    font-size: 0.9rem;
     color: var(--secondary-text);
 }
 
 /* --- Responsiveness --- */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        letter-spacing: -1px;
     }
     .container {
-        padding: 20px 15px;
+        padding: 30px 15px;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .card {
+        padding: 20px;
     }
 }
