@@ -1,0 +1,180 @@
+/* --- Graphite & Amber Palette --- */
+:root {
+    --background-color: #121212;
+    --text-color: #FFFFFF;
+    --accent-color: #F59E0B; /* Amber */
+    --card-background: #1E1E1E;
+    --secondary-text: #A0A0A0;
+    --border-color: #333333;
+}
+
+/* --- General Setup --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+h2 {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    margin-top: 40px;
+    font-size: 1.8rem;
+}
+
+p {
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+header .tagline {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    font-size: 1.8rem;
+    margin: 0 15px;
+    color: var(--secondary-text);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Skills --- */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* --- Cards (for Projects & Courses) --- */
+.card {
+    background-color: var(--card-background);
+    border-left: 4px solid var(--accent-color);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+     background-color: #2a2a2a;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.card h3 a {
+    color: var(--text-color);
+}
+.card h3 a:hover {
+    color: var(--accent-color);
+}
+
+
+.card h4 {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+.card ul li {
+    color: var(--secondary-text);
+}
+
+.card .tech {
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+footer .email-link {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .container {
+        padding: 20px 15px;
+    }
+}
